@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Chat</h1>
+    <div id="chatPanel">
+        <div hx-ext="sse" sse-connect="/Index?handler=Sse">
+            <div id="chat-container" sse-swap="newMessage" hx-swap="beforeend">
+                <!-- Chat messages will be displayed here -->
+            </div>
+        </div>
+        <form hx-post="/Index?handler=SendMessage" hx-swap="none">
+            @Html.AntiForgeryToken()
+            <input type="text" name="User" placeholder="Your name" required />
+            <input type="text" name="Message" placeholder="Your message" required />
+            <button type="submit">Send</button>
+        </form>
+
+    </div>
+</div>

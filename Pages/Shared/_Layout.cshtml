@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RazorHtmx_Chat</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/sse.js"></script>
+</head>
+
+<body hx-boost="true">
+    <header>
+
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer>
+
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
